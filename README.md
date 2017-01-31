@@ -1,2 +1,3 @@
 # Phlappy_clone
-Flappy bird clone 
+Source code for customised Flappy bird clone
+
