@@ -1,6 +1,6 @@
 import pygame
 import time
-from random import *
+from random import randint, randrange
 
 #adding colors and difficulty levels 7:20
 black = (0,0,0)
@@ -9,7 +9,7 @@ pink = (255,223,229)
 yellow = (248,207,106)
 purple = (42,3,104)
 
-colorChoice = [pink, yellow, purple]
+colorChoices = [pink, yellow, purple]
 
 pygame.init()
 
@@ -30,7 +30,8 @@ def score(count):
     text = font.render('Score: '+ str(count), True, white)
     surface.blit(text,[0, 0])
     
-def blocks(x_block, y_block, block_width, block_height, gap, colorChoice):#blockpipes in game
+def blocks(x_block, y_block, block_width, block_height, gap):#blockpipes in game
+    colorChoice = colorChoices[randrange(0,len(colorChoices))]
     pygame.draw.rect(surface, colorChoice, [x_block, y_block, block_width, block_height])
     pygame.draw.rect(surface, colorChoice, [x_block, y_block + block_height + gap, block_width, surfaceHeight])
     
